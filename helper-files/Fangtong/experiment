@@ -1,0 +1,30 @@
+# vary motif 
+for k in (8:4:40)
+    motif_performance = []
+    dna = Arti_DNA(t, l, k, m, gc, motif)
+    push!(motif_performance, @time pairmotif(dna, k, d_thres), @allocated pairmotif(dna, k, d_thres), pairmotif(dna, k, d_thres))
+end
+
+
+# vary number of dna
+for t in (20:5:150)
+    dna_num_performance = []
+    dna = Arti_DNA(t, l, k, m, gc, motif)
+    push!(output, @time pairmotif(dna, k, d_thres), @allocated pairmotif(dna, k, d_thres), pairmotif(dna, k, d_thres))
+end
+
+
+# vary dna length
+for l in (100:100:1000)
+    dna_len_performance = []
+    dna = Arti_DNA(t, l, k, m, gc, motif)
+    push!(output, @time pairmotif(dna, k, d_thres), @allocated pairmotif(dna, k, d_thres), pairmotif(dna, k, d_thres))
+end
+
+
+#  d_threshold = 0 -> 16
+dna = Arti_DNA(t, l, k, m, gc, motif)
+for d in (0:1:16)
+    d_performance = []
+    push!(output, @time pairmotif(dna, k, d), @allocated pairmotif(dna, k, d), pairmotif(dna, k, d))
+end

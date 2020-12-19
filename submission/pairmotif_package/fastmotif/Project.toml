@@ -1,0 +1,4 @@
+name = "fastmotif"
+uuid = "f84cc4f7-27a1-4ba8-97c7-978d627808ed"
+authors = ["Nischal <nkashya@ncsu.edu>"]
+version = "0.1.0"

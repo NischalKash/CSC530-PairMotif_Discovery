@@ -1,0 +1,12 @@
+function Precision(output, motif, d)
+    TP = 0
+    FP = 0
+    for i in 1:length(output)
+        if hamming(output[i], motif) <= d
+            TP = TP + 1 
+        else
+            FP = FP + 1
+        end
+    end
+    return(TP/(TP + FP))
+end

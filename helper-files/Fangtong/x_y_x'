@@ -1,0 +1,22 @@
+function verify(x, x_1, d)
+    nucleo = "ACGT"
+    n = length(x)
+    y = []
+    index = collect(combinations(1:n, d))
+    println(index)
+    for i in index
+        temp = []
+        for j in 1:d
+            if x[i][j] == nucleo[1]
+                push!(temp,"CGT")
+            elseif x[i][j] == nucleo[2]
+                push!(temp,"AGT") 
+            elseif x[i][j] == nucleo[3]
+                push!(temp,"ACT")
+            else
+                push!(temp,"ACG")  
+            end
+        end
+        println(temp)
+    end
+end

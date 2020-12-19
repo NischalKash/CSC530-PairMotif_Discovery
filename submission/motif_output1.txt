@@ -1,0 +1,30 @@
+Start positions of motifs in each strand are as follows
+In strand1
+62,
+In strand2
+55,
+In strand3
+91,
+In strand4
+9,
+In strand5
+76,
+
+Consensus Motifs : 
+ATTGACCGT
+
+Motifs:
+S1 : 
+ATTGACCGT
+
+S2 : 
+ATTGACCGT
+
+S3 : 
+ATTGACCGT
+
+S4 : 
+ATTGACCGT
+
+S5 : 
+ATTGACCGT

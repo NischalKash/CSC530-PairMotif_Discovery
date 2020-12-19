@@ -1,0 +1,21 @@
+function Arti_DNA(t, l, k, m)                                               # t*l DNA matrix, length of motif k, implanted times m  
+    DNA = []
+    for i in 1:t
+        rand_str = randstring("AT", 59)*randstring("GC", 41)                 # GC-content of 41%
+        seq = randstring(rand_str, l)                                        # shuffle the string to make sure of randomness
+        push!(DNA, seq)
+    end
+    motif = randstring("ACGT", k)                                            # implanted motif
+    position = []
+    for i in 1:t
+        rand_num = rand([i for i = 1:l], m)
+        r = sort(rand_num)
+        p = []
+        for n in 1:m                                                        # implant m times
+            DNA[i] = DNA[i][1:r[n]+k*(n-1)]*motif*DNA[i][r[n]+k*(n-1)+1:l+k*(n-1)]
+            push!(p, r[n]+k*(n-1)+1)
+        end
+        push!(position, p)
+    end
+    return(position, motif, DNA)
+end
